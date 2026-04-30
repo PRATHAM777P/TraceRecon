@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 TraceRecon — Open-Source Intelligence & Network Reconnaissance Toolkit
 Version: 2.0.0
