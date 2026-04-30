@@ -1,0 +1,13 @@
+# TraceRecon — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# ── Core ──────────────────────────────────────────────
+requests>=2.31.0          # HTTP requests & API calls
+phonenumbers>=8.13.0      # Phone number parsing & OSINT
+
+# ── DNS & WHOIS ────────────────────────────────────────
+dnspython>=2.4.0          # DNS record lookups (Module 5)
+python-whois>=0.8.0       # WHOIS domain queries (Module 6)
+
+# ── Optional (asset generation only) ──────────────────
+# Pillow>=10.0.0          # PNG asset generation (dev only)
