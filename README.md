@@ -271,7 +271,6 @@ TraceRecon/
 ├── requirements.txt     ← Python dependencies
 ├── README.md            ← This file
 ├── SECURITY.md          ← Security policy & ethical use
-├── LICENSE              ← MIT License
 ├── .gitignore           ← Excludes output/, venv/, etc.
 ├── assets/
 │   ├── banner.png       ← Project header banner
