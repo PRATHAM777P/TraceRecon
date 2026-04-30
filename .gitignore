@@ -1,0 +1,52 @@
+# TraceRecon — .gitignore
+
+# ── Python ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# ── Virtual Environments ───────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Output / Results ──────────────────────────────────
+# IMPORTANT: never commit scan results — they may contain PII
+output/
+*.json
+*.txt
+!requirements.txt
+!README.md
+
+# ── OS Artifacts ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# ── IDE ────────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ── Logs ──────────────────────────────────────────────
+*.log
+logs/
+
+# ── Secrets / Env ──────────────────────────────────────
+.env
+.env.*
+*.pem
+*.key
+config.local.*
