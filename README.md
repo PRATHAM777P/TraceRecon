@@ -322,7 +322,7 @@ Please read [SECURITY.md](SECURITY.md) before contributing.
 - [ ] JSON config file for API keys
 
 ---
-### 🌟 Star this repo if IPWatchdog helps secure your server!
+### 🌟 Star this TraceRecon repo!
 
 [![Star History Chart](https://api.star-history.com/svg?repos=PRATHAM777P/TraceRecon&type=Date)](https://star-history.com/#PRATHAM777P/TraceRecon)
 
