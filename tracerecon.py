@@ -104,8 +104,17 @@ def err(msg):
     print(f" {C.WHT}[{C.RED}✗{C.WHT}]{C.RST} {C.RED}{msg}{C.RST}")
 
 
+def _sanitize_info_value(label: str, value):
+    """Mask sensitive values before printing to terminal output."""
+    sensitive_labels = {"latitude", "longitude", "google maps"}
+    if isinstance(label, str) and label.strip().lower() in sensitive_labels:
+        return "[REDACTED]"
+    return value
+
+
 def info(label: str, value, label_color=C.WHT, val_color=C.GRN):
-    print(f"  {label_color}{label:<22}{C.RST}: {val_color}{value}{C.RST}")
+    safe_value = _sanitize_info_value(label, value)
+    print(f"  {label_color}{label:<22}{C.RST}: {val_color}{safe_value}{C.RST}")
 
 
 def save_result(filename: str, data: dict):
