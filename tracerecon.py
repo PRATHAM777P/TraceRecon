@@ -113,17 +113,24 @@ def save_result(filename: str, data: dict):
     ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     base = OUTPUT_DIR / f"{filename}_{ts}"
 
+    # Redact sensitive/private fields before persistence.
+    safe_data = dict(data)
+    sensitive_fields = {"latitude", "longitude", "maps"}
+    for field in sensitive_fields:
+        if field in safe_data:
+            safe_data[field] = "[REDACTED]"
+
     # JSON
     json_path = base.with_suffix(".json")
     with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+        json.dump(safe_data, f, indent=2, ensure_ascii=False)
 
     # Plain TXT
     txt_path = base.with_suffix(".txt")
     with open(txt_path, "w", encoding="utf-8") as f:
         f.write(f"TraceRecon Export — {datetime.datetime.now().isoformat()}\n")
         f.write("=" * 60 + "\n")
-        for k, v in data.items():
+        for k, v in safe_data.items():
             f.write(f"{k:<24}: {v}\n")
 
     ok(f"Results saved → {json_path.name}  &  {txt_path.name}")
